@@ -1,0 +1,17 @@
+﻿
+@using Blazored.Toast.Configuration
+
+@inherits LayoutComponentBase
+
+<BlazoredToasts Position="ToastPosition.BottomRight"
+                Timeout="5"
+                SuccessClass="success-toast-override"
+                SuccessIconClass="fa fa-thumbs-up"
+                ErrorIconClass="fa fa-bug" />
+
+<div class="main">
+    <div class="content px-4">
+        @Body
+    </div>
+    <AnchorUtilsComponent />
+</div>

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blazored.Toast\Blazored.Toast.csproj" />
+    <ProjectReference Include="..\DevExpress.Blazor.AnchorUtils\DevExpress.Blazor.AnchorUtils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\ContactMes\" />
+  </ItemGroup>
+
+</Project>
