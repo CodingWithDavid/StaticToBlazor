@@ -1,0 +1,81 @@
+﻿
+@using StaticToBlazorPart6.Models
+@inject StaticToBlazorPart6.Services.PortifilioConfigurationService Service
+
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <!-- Footer Location -->
+                @if (!string.IsNullOrEmpty(model.Address.Address1))
+                {
+
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        @model.Address.Address1
+                        <br/>
+                        @model.Address.Address2
+                        <br>@model.Address.City,
+                        <br/>@model.Address.State @model.Address.Zip
+                    </p>
+                }
+            </div>
+
+            <!-- Footer Social Icons -->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Around the Web</h4>
+                @if (!string.IsNullOrEmpty(model.SocialLinks.FaceBookLink))
+                {
+                    <a class="btn btn-outline-light btn-social mx-1" href="@model.SocialLinks.FaceBookLink" target="_blank">
+                        <i class="fab fa-fw fa-facebook-f"></i>
+                    </a>
+                }
+                @if (!string.IsNullOrEmpty(model.SocialLinks.TwitterLink))
+                {
+                    <a class="btn btn-outline-light btn-social mx-1" href="@model.SocialLinks.TwitterLink" target="_blank">
+                        <i class="fab fa-fw fa-twitter"></i>
+                    </a>
+                }
+                @if (!string.IsNullOrEmpty(model.SocialLinks.LinkedInLink))
+                {
+                    <a class="btn btn-outline-light btn-social mx-1" href="@model.SocialLinks.LinkedInLink" target="_blank">
+                        <i class="fab fa-fw fa-linkedin-in"></i>
+                    </a>
+                }
+                @if (!string.IsNullOrEmpty(model.SocialLinks.GitHub))
+                {
+                    <a class="btn btn-outline-light btn-social mx-1" href="@model.SocialLinks.GitHub" target="_blank">
+                        <i class="fab fa-fw fa-github"></i>
+                    </a>
+                }
+                @if (!string.IsNullOrEmpty(model.SocialLinks.DribbleLink))
+                {
+                    <a class="btn btn-outline-light btn-social mx-1" href="@model.SocialLinks.DribbleLink" target="_blank">
+                        <i class="fab fa-fw fa-dribbble"></i>
+                    </a>
+                }
+            </div>
+
+                <!-- Footer About Text -->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">@model.About</h4>
+                    <p class="lead mb-0">
+                        @model.Message
+                    </p>
+                </div>
+
+            </div>
+    </div>
+</footer>
+
+@code {
+
+    FooterModel model = new FooterModel();
+
+    protected override async Task OnInitializedAsync()
+    {
+        model = await Service.GetFooter();
+    }
+
+}

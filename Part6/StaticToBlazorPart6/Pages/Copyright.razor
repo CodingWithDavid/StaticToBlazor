@@ -1,0 +1,22 @@
+﻿
+@using StaticToBlazorPart6.Models
+@inject StaticToBlazorPart6.Services.PortifilioConfigurationService Service
+
+<!-- Copyright Section -->
+<section class="copyright py-4 text-center text-white">
+    <div class="container">
+        <small>Copyright &copy; @model.Name @currentYear</small>
+    </div>
+</section>
+
+@code {
+
+    string currentYear = DateTime.Now.Year.ToString();
+
+    HeaderModel model = new HeaderModel();
+
+    protected override async Task OnInitializedAsync()
+    {
+        model = await Service.GetHeader();
+    }
+}
