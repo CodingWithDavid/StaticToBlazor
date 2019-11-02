@@ -54,5 +54,55 @@ namespace StaticToBlazorPart6.Services
             return result;
         }
 
+        public async Task<PortfolioDataList> GetPortfilo()
+        {
+            PortfolioDataList result = new PortfolioDataList();
+
+            PortfolioDataModel data = new PortfolioDataModel()
+            {
+                ImageURL = "img/portfolio/cabin.png",
+                Title = "Log Cabin",
+                Summary = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+            };
+            result.Portfolios.Add(data);
+            data = new PortfolioDataModel()
+            {
+                ImageURL = "img/portfolio/cake.png",
+                Title = "Cakse",
+                Summary = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+            };
+            result.Portfolios.Add(data);
+            data = new PortfolioDataModel()
+            {
+                ImageURL = "img/portfolio/circus.png",
+                Title = "Circus",
+                Summary = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+            };
+            result.Portfolios.Add(data);
+            data = new PortfolioDataModel()
+            {
+                ImageURL = "img/portfolio/game.png",
+                Title = "Game",
+                Summary = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+            };
+            result.Portfolios.Add(data);
+            data = new PortfolioDataModel()
+            {
+                ImageURL = "img/portfolio/safe.png",
+                Title = "Safe",
+                Summary = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+            };
+            result.Portfolios.Add(data);
+            data = new PortfolioDataModel()
+            {
+                ImageURL = "img/portfolio/submarine.png",
+                Title = "Submarine",
+                Summary = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam."
+            };
+            result.Portfolios.Add(data);
+            await Task.CompletedTask;
+            return result;
+        }
+
     }
 }

@@ -11,6 +11,7 @@ using StaticToBlazorPart6.Services;
 
 //3rd party
 using Blazored.Toast;
+using Blazored.Modal;
 
 namespace StaticToBlazorPart6
 {
@@ -30,6 +31,7 @@ namespace StaticToBlazorPart6
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddBlazoredToast();
+            services.AddBlazoredModal();
             services.AddSingleton<PortifilioConfigurationService>();
             services.AddSingleton<ContactMeService>();
         }

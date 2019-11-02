@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Blazored.Modal\Blazored.Modal.csproj" />
     <ProjectReference Include="..\Blazored.Toast\Blazored.Toast.csproj" />
     <ProjectReference Include="..\DevExpress.Blazor.AnchorUtils\DevExpress.Blazor.AnchorUtils.csproj" />
   </ItemGroup>

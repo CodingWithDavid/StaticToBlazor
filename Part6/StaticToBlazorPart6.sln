@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevExpress.Blazor.AnchorUti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazored.Toast", "Blazored.Toast\Blazored.Toast.csproj", "{A7184048-EF86-42A3-8608-5A99EAB04495}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazored.Modal", "Blazored.Modal\Blazored.Modal.csproj", "{BE2ACD07-D536-4241-A418-1B32C447BA25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A7184048-EF86-42A3-8608-5A99EAB04495}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7184048-EF86-42A3-8608-5A99EAB04495}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7184048-EF86-42A3-8608-5A99EAB04495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2ACD07-D536-4241-A418-1B32C447BA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2ACD07-D536-4241-A418-1B32C447BA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2ACD07-D536-4241-A418-1B32C447BA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2ACD07-D536-4241-A418-1B32C447BA25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
