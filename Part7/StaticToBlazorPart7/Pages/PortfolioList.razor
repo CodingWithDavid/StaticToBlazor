@@ -1,0 +1,72 @@
+﻿@using StaticToBlazorPart7.Models;
+
+@inject StaticToBlazorPart7.Services.PortifilioConfigurationService Service
+@inject IModalService Modal
+
+<!-- Portfolio Section -->
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
+
+        <!-- Portfolio Section Heading -->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <!-- Portfolio Grid Items -->
+        <div class="row">
+            @foreach (var item in model.Portfolios)
+            {
+                <!-- Portfolio Item 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item mx-auto" @onclick="@(e => ShowModal(item))">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white">
+                                <i class="fas fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="@item.ImageURL" alt="">
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+
+@code {
+
+    private PortfolioDataList model = new PortfolioDataList();
+    string error = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        model = await Service.GetPortfilo();
+    }
+
+    //handle the Modal
+    void ShowModal(PortfolioDataModel model)
+    {
+        var parameters = new ModalParameters();
+
+        if (model != null)
+        {
+            parameters.Add("portfolio", model);
+
+            Modal.OnClose += ModalClosed;
+            Modal.Show("", typeof(PortfolioModal), parameters);
+        }
+    }
+
+    void ModalClosed(ModalResult modalResult)
+    {
+        StateHasChanged();
+        Modal.OnClose -= ModalClosed;
+    }
+}

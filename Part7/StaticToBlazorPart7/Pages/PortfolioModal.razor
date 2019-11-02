@@ -1,0 +1,49 @@
+﻿
+@using StaticToBlazorPart7.Models;
+
+@inject IModalService ModalService
+
+<section id="portfilio_details">
+    <div class="modal-body text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">@portfolio.Title</h2>
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <img class="img-fluid rounded mb-5" src="@portfolio.ImageURL" alt="">
+                    <p class="mb-5">@portfolio.Summary</p>
+                    <button class="btn btn-primary" @onclick="CancelAction">
+                        <i class="fas fa-times fa-fw"></i>
+                        Close Window
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+
+    [CascadingParameter] ModalParameters Parameters { get; set; }
+
+    private PortfolioDataModel portfolio = new PortfolioDataModel();
+
+    protected override void OnInitialized()
+    {
+        if (Parameters != null)
+        {
+            portfolio = Parameters.Get<PortfolioDataModel>("portfolio");
+        }
+    }
+
+    private void CancelAction()
+    {
+        ModalService.Cancel();
+    }
+}
